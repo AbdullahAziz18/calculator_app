@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "458199360782",
+    "firebase_url": "https://abcd-d6e60-default-rtdb.firebaseio.com",
+    "project_id": "abcd-d6e60",
+    "storage_bucket": "abcd-d6e60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458199360782:android:168355be6aabc657f7235f",
+        "android_client_info": {
+          "package_name": "com.example.calculator_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAMX_6XWJFwouwijKlMMrfLjAZf3p2kQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

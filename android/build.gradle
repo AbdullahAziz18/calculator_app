@@ -1,0 +1,38 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    // Force resolution of the correct Kotlin version to avoid conflicts
+    configurations.all {
+        resolutionStrategy {
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+        }
+    }
+}
+
+// Set build directory
+rootProject.buildDir = "../build"
+
+// Ensure subprojects use the root build directory
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// Ensure subprojects evaluate after the app module
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Define the 'clean' task to delete the root build directory
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+// Enable AndroidX and Jetifier for compatibility with newer libraries
+gradle.rootProject {
+    ext["android.useAndroidX"] = true
+    ext["android.enableJetifier"] = true
+}
